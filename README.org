@@ -5,7 +5,7 @@
 - Treesitter
 - Lsp 
 - Mason (for quick lsp-server install)
-- some other stuff that are nice to have (see lua/chris/packer.lua) 
+- some other stuff minor plugins are nice to have (see lua/chris/packer.lua) 
 
 * Installation
 #+begin_src shell
