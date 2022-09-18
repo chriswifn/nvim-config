@@ -21,6 +21,7 @@ require('packer').startup(function(use)
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use 'numToStr/Comment.nvim'
     use 'tjdevries/express_line.nvim'
+    use 'lewis6991/gitsigns.nvim'
     use 'norcalli/nvim-colorizer.lua'
 
 	if is_bootstrap then
