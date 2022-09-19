@@ -16,6 +16,10 @@ nnoremap('<C-Up>', '<cmd>resize -3<CR>')
 nnoremap('<C-Down>', '<cmd>resize +3<CR>')
 nnoremap('<leader>tt', '<cmd>split term://bash <CR>')
 
+-- improve C-d and C-u
+nnoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
+
 -- Telescope
 nnoremap('<leader>ff', '<cmd>Telescope find_files hidden=true<CR>')
 nnoremap('<leader>fr', '<cmd>Telescope oldfiles<CR>')
