@@ -24,6 +24,10 @@ require('packer').startup(function(use)
     use 'nvim-lualine/lualine.nvim'
     use 'lewis6991/gitsigns.nvim'
     use 'norcalli/nvim-colorizer.lua'
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 
 	if is_bootstrap then
 		require('packer').sync()
