@@ -7,7 +7,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 require('packer').startup(function(use)
-	use 'wbthomason/packer.nvim'
+    use 'wbthomason/packer.nvim'
     use 'lewis6991/impatient.nvim'
     use 'luisiacc/gruvbox-baby'
     use 'nvim-treesitter/nvim-treesitter'
@@ -29,7 +29,7 @@ require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
 
-	if is_bootstrap then
-		require('packer').sync()
-	end
+    if is_bootstrap then
+        require('packer').sync()
+    end
 end)
