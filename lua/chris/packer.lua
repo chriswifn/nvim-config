@@ -10,6 +10,7 @@ require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'lewis6991/impatient.nvim'
     use 'luisiacc/gruvbox-baby'
+    use 'ishan9299/modus-theme-vim'
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/nvim-treesitter-textobjects'
     use 'nvim-treesitter/nvim-treesitter-context'
