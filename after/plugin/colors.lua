@@ -20,5 +20,5 @@
 
 vim.g.modus_yellow_comments = 1
 vim.g.modus_faint_syntax = 1
-vim.g.modus_dim_inactive_window = 0
+vim.g.modus_dim_inactive_window = 1
 vim.cmd('colorscheme modus-vivendi')
