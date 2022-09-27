@@ -19,6 +19,7 @@
 -- vim.cmd[[colorscheme gruvbox-baby]]
 
 vim.g.modus_yellow_comments = 1
+vim.g.modus_green_strings = 1
 vim.g.modus_faint_syntax = 1
 vim.g.modus_dim_inactive_window = 1
 vim.cmd('colorscheme modus-vivendi')
