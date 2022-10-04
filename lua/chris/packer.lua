@@ -20,9 +20,7 @@ require('packer').startup(function(use)
     use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }
     use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use { 'tjdevries/expressline.nvim' }
     use 'numToStr/Comment.nvim'
-    use 'lewis6991/gitsigns.nvim'
     use 'norcalli/nvim-colorizer.lua'
     use {
         "windwp/nvim-autopairs",
