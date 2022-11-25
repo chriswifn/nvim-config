@@ -26,6 +26,7 @@ require('packer').startup(function(use)
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
+    use 'tpope/vim-fugitive'
 
     if is_bootstrap then
         require('packer').sync()
