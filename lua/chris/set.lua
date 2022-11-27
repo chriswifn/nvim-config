@@ -28,6 +28,8 @@ vim.opt.cmdheight = 1
 vim.opt.updatetime = 50
 vim.opt.shortmess:append("c")
 vim.g.mapleader = " "
+-- disable continuation of comments
+vim.opt.formatoptions = vim.opt.formatoptions - {"c", "r", "o"}
 
 -- swapfile and backup disabled
 vim.opt.swapfile = false
