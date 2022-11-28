@@ -60,37 +60,37 @@ local vcs = function()
 end
 
 local function lsp()
-  local count = {}
-  local levels = {
-    errors = "Error",
-    warnings = "Warn",
-    info = "Info",
-    hints = "Hint",
-  }
+    local count = {}
+    local levels = {
+        errors = "Error",
+        warnings = "Warn",
+        info = "Info",
+        hints = "Hint",
+    }
 
-  for k, level in pairs(levels) do
-    count[k] = vim.tbl_count(vim.diagnostic.get(0, { severity = level }))
-  end
+    for k, level in pairs(levels) do
+        count[k] = vim.tbl_count(vim.diagnostic.get(0, { severity = level }))
+    end
 
-  local errors = ""
-  local warnings = ""
-  local hints = ""
-  local info = ""
+    local errors = ""
+    local warnings = ""
+    local hints = ""
+    local info = ""
 
-  if count["errors"] ~= 0 then
-    errors = " %#LspDiagnosticsSignError#e:" .. count["errors"]
-  end
-  if count["warnings"] ~= 0 then
-    warnings = " %#LspDiagnosticsSignWarning#w:" .. count["warnings"]
-  end
-  if count["hints"] ~= 0 then
-    hints = " %#LspDiagnosticsSignHint#h:" .. count["hints"]
-  end
-  if count["info"] ~= 0 then
-    info = " %#LspDiagnosticsSignInformation#i:" .. count["info"]
-  end
+    if count["errors"] ~= 0 then
+        errors = " %#LspDiagnosticsSignError#e:" .. count["errors"]
+    end
+    if count["warnings"] ~= 0 then
+        warnings = " %#LspDiagnosticsSignWarning#w:" .. count["warnings"]
+    end
+    if count["hints"] ~= 0 then
+        hints = " %#LspDiagnosticsSignHint#h:" .. count["hints"]
+    end
+    if count["info"] ~= 0 then
+        info = " %#LspDiagnosticsSignInformation#i:" .. count["info"]
+    end
 
-  return errors .. warnings .. hints .. info
+    return errors .. warnings .. hints .. info
 end
 
 local function lineinfo()
