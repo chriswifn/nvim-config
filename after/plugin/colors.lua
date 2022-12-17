@@ -1,19 +1,25 @@
-vim.g.gruvbox_baby_function_style = "bold"
-vim.g.gruvbox_baby_keyword_style = "bold"
-vim.g.gruvbox_baby_comment_style = "NONE"
-vim.g.gruvbox_baby_telescope_theme = 0
-vim.g.gruvox_baby_background_color = "dark"
-vim.g.gruvbox_baby_highlights = {
-    Normal = {
-        fg = "#fbf1c7",
-        bg = "NONE",
-        style="NONE"
+require("tokyonight").setup({
+    style = "night",
+    light_style = "day",
+    transparent = true,
+    terminal_colors = true,
+    styles = {
+        comments = { italic = false },
+        keywords = { bold = true },
+        functions = { bold = true },
+        variables = {},
+        sidebars = "dark",
+        floats = "dark",
     },
-    SignColumn = {
-        fg = "NONE",
-        bg = "NONE",
-        style = "NONE"
-    }
-}
+    sidebars = { "qf", "help" },
+    day_brightness = 0.3,
+    hide_inactive_statusline = false,
+    dim_inactive = false,
+    lualine_bold = false,
 
-vim.cmd[[colorscheme gruvbox-baby]]
+    on_colors = function(colors) end,
+
+    on_highlights = function(highlights, colors) end,
+})
+
+vim.cmd[[colorscheme tokyonight]]
