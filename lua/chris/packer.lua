@@ -23,7 +23,7 @@ require('packer').startup(function(use)
 
     -- colorscheme
     use 'folke/tokyonight.nvim'
-    use 'tjdevries/express_line.nvim'
+    use 'nvim-lualine/lualine.nvim'
 
     -- treesitter
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
