@@ -23,6 +23,7 @@ require('packer').startup(function(use)
 
     -- colorscheme
     use 'folke/tokyonight.nvim'
+    use 'ellisonleao/gruvbox.nvim'
     use 'nvim-lualine/lualine.nvim'
 
     -- treesitter
@@ -59,15 +60,15 @@ require('packer').startup(function(use)
     use 'norcalli/nvim-colorizer.lua'
 
     -- indentation visualizer
-    use {
-        'lukas-reineke/indent-blankline.nvim',
-        config = function()
-            require("indent_blankline").setup {
-                char = '┊',
-                show_trailing_blankline_indent = false,
-            }
-        end,
-    }
+    -- use {
+    --     'lukas-reineke/indent-blankline.nvim',
+    --     config = function()
+    --         require("indent_blankline").setup {
+    --             char = '┊',
+    --             show_trailing_blankline_indent = false,
+    --         }
+    --     end,
+    -- }
 
     -- lsp
     use {
