@@ -33,6 +33,11 @@ local M = {
                 mappings = { i = { ["<esc>"] = actions.close } },
             },
 
+            file_ignore_patters = {
+                "./node%_modules/.*",
+                "./.git/.*",
+            },
+
             extensions = {
                 fzf = {
                     fuzzy = true,
