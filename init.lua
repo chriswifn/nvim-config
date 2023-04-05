@@ -2,7 +2,7 @@
 require("config.options")
 require("config.lazy")
 
--- be VeryLazy
+-- be lazy 
 vim.api.nvim_create_autocmd("User", {
     pattern = "VeryLazy",
     callback = function()
