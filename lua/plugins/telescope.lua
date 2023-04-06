@@ -24,18 +24,17 @@ local M = {
             pickers = {
                 find_files = { hidden = true },
                 live_grep = {
-                    additional_args = function(opts)
+                    additional_args = function()
                         return { "--hidden" }
                     end,
                 },
             },
             defaults = {
                 mappings = { i = { ["<esc>"] = actions.close } },
-            },
-
-            file_ignore_patters = {
-                "./node%_modules/.*",
-                "./.git/.*",
+                file_ignore_patterns = {
+                    "node_modules",
+                    ".git",
+                },
             },
 
             extensions = {
