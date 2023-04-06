@@ -7,6 +7,7 @@ local M = {
     opts = {
         exclude_dirs = { "~/Downloads", "~/Desktop" },
         detection_methods = { "pattern", "lsp" },
+        patterns = { ".git", ".projectile", "Makefile", "package.json" },
         ignore_lsp = {},
         silent_chdir = false,
     },
