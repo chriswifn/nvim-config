@@ -1,6 +1,6 @@
 local M = {
     "ahmedkhalf/project.nvim",
-    event = "VimEnter",
+    event = "BufReadPre",
     keys = {
         { "<leader>fp", "<cmd>lua require('telescope').extensions.projects.projects{}<cr>", desc = "[F]ind [P]rojects" },
     },

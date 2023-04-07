@@ -1,6 +1,6 @@
 local M = {
     "nvim-tree/nvim-tree.lua",
-    event = "BufWinEnter",
+    event = "BufReadPre",
     dependencies = {
         "nvim-tree/nvim-web-devicons"
     },
