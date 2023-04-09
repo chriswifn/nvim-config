@@ -22,7 +22,10 @@ local M = {
             additional_vim_regex_highlighting = false,
         },
         autopairs = { enable = true },
-        autotag = { enable = true },
+        autotag = {
+            enable = true,
+            filetypes = { "html", "javascript", "typescript", "xml", "php", "markdown" },
+        },
         indent = { enable = true },
         ensure_installed = "lua",
         sync_install = true,
