@@ -3,8 +3,8 @@ local M = {
     event = "BufReadPre",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     opts = {
-        org_agenda_files = { "~/org/*" },
-        org_default_notes_file = "~/org/refile.org",
+        org_agenda_files = { "~/media/org/*" },
+        org_default_notes_file = "~/media/org/refile.org",
     },
     config = function(_,opts)
         require("orgmode").setup_ts_grammar()
