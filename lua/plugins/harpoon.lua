@@ -8,6 +8,7 @@ local M = {
         { "<leader>hj", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", desc = "[H]arpoon [2]" },
         { "<leader>hk", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", desc = "[H]arpoon [3]" },
         { "<leader>hl", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", desc = "[H]arpoon [4]" },
+        { "<leader>hf", "<cmd>lua require('telescope').extensions.harpoon.marks{}<cr>", desc = "[F]ind [H]arpoon Mark"}
     },
     config = function()
         require("harpoon").setup()
