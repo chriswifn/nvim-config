@@ -19,7 +19,7 @@ local M = {
                     return true
                 end
             end,
-            additional_vim_regex_highlighting = false,
+            additional_vim_regex_highlighting = {'org'},
         },
         autopairs = { enable = true },
         autotag = {
@@ -27,7 +27,7 @@ local M = {
             filetypes = { "html", "javascript", "typescript", "xml", "php", "markdown" },
         },
         indent = { enable = true },
-        ensure_installed = "lua",
+        ensure_installed = { "lua", "org" },
         sync_install = true,
         ignore_install = {},
         refactor = {
