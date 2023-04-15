@@ -9,6 +9,6 @@
 
 * Installation
 #+begin_src shell
-  git clone https://github.com/chriswifn/nvim-config.git ~/.config/nvim
+git clone https://github.com/chriswifn/nvim-config.git ~/.config/nvim
 #+end_src
 and let =lazy.nvim= download the plugins.
