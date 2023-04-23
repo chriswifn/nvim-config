@@ -13,3 +13,5 @@ cd nvim-config
 and let `lazy.nvim` download the plugins.
 The `setup` file is there because I don't like having git repos in
 `.config`.
+
+**Warning**: Executing the `setup` script will delete the current Neovim configuration
