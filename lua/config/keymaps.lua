@@ -28,3 +28,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- make file executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
+-- ease of use 
+vim.keymap.set("n", "gO", "<cmd>!xdg-open <cfile><CR>", {silent = true})
+vim.keymap.set("n", "ii", "<cmd>:pu=strftime('%Y%m%dT%H%M%S')<CR>", {silent = true})
