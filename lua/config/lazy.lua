@@ -18,6 +18,7 @@ require("lazy").setup("plugins", {
     ui = {
         border = "none",
     },
-    checker = { enabled = true },
+    checker = { enabled = false },
     debug = false,
+    change_detection = { enabled = false },
 })
