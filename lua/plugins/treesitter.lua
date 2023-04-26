@@ -4,7 +4,6 @@ local M = {
     build = ":TSUpdate",
     event = "BufReadPost",
     dependencies = {
-        "nvim-treesitter/nvim-treesitter-refactor",
         "nvim-treesitter/nvim-treesitter-textobjects",
         "nvim-treesitter/nvim-treesitter-context",
         "windwp/nvim-ts-autotag",
@@ -27,7 +26,7 @@ local M = {
             filetypes = { "html", "javascript", "typescript", "xml", "php", "markdown" },
         },
         indent = { enable = true },
-        ensure_installed = { "lua", "org" },
+        ensure_installed = { "lua" },
         sync_install = true,
         ignore_install = {},
         refactor = {
