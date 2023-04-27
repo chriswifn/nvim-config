@@ -9,9 +9,9 @@ vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux_sessionizer<cr>")
 
 -- copy and paste (system clipboard)
 vim.keymap.set("n", "<leader>p", [["+p]])
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- move things around in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -28,6 +28,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- make file executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
--- ease of use 
-vim.keymap.set("n", "gO", "<cmd>!xdg-open <cfile><CR>", {silent = true})
-vim.keymap.set("n", "<leader>ii", "<cmd>:pu=strftime('%Y%m%dT%H%M%S')<CR>", {silent = true})
+-- ease of use
+vim.keymap.set("n", "gO", "<cmd>!xdg-open <cfile><CR>", { silent = true })
+vim.keymap.set("n", "<leader>ii", "<cmd>:pu=strftime('%Y%m%dT%H%M%S')<CR>", { silent = true })
