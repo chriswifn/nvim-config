@@ -1,82 +1,13 @@
 -- lsp
 local M = {
     {
-        "hrsh7th/nvim-cmp",
-        event = "BufReadPre",
-        dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
-            "L3MON4D3/LuaSnip",
-            "saadparwaiz1/cmp_luasnip"
-        },
-        opts = function()
-            local luasnip = require("luasnip")
-            local cmp = require("cmp")
-
-            return {
-                snippet = {
-                    expand = function(args)
-                        luasnip.lsp_expand(args.body)
-                    end,
-                },
-
-                mapping = cmp.mapping.preset.insert {
-                    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-                    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                    ["<C-Space>"] = cmp.mapping.complete {},
-                    ["<CR>"] = cmp.mapping.confirm {
-                        behavior = cmp.ConfirmBehavior.Replace,
-                        select = true,
-                    },
-                    ["<Tab>"] = cmp.mapping(function(fallback)
-                        if cmp.visible() then
-                            cmp.select_next_item()
-                        elseif luasnip.expand_or_jumpable() then
-                            luasnip.expand_or_jump()
-                        else
-                            fallback()
-                        end
-                    end, { "i", "s" }),
-                    ["<S-Tab>"] = cmp.mapping(function(fallback)
-                        if cmp.visible() then
-                            cmp.select_prev_item()
-                        elseif luasnip.jumpable(-1) then
-                            luasnip.jump(-1)
-                        else
-                            fallback()
-                        end
-                    end, { "i", "s" }),
-                },
-                sources = {
-                    { name = "nvim_lsp" },
-                    { name = "luasnip" },
-                },
-            }
-        end,
-
-        config = function(_, opts)
-            local cmp = require "cmp"
-            local luasnip = require "luasnip"
-
-            luasnip.config.setup {}
-
-            cmp.setup(opts)
-        end,
-    },
-
-    {
         "neovim/nvim-lspconfig",
         event = "BufReadPre",
         dependencies = {
-            -- Automatically install LSPs to stdpath for neovim
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
-
-            -- Useful status updates for LSP
-            { "j-hui/fidget.nvim", opts = {} },
-
-            "folke/neodev.nvim",
         },
-        config = function(_,_)
+        config = function()
             local on_attach = function(_, bufnr)
                 local nmap = function(keys, func, desc)
                     if desc then
@@ -108,10 +39,9 @@ local M = {
                     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
                 end, "[W]orkspace [L]ist Folders")
 
-                -- Create a command `:Format` local to the LSP buffer
                 vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-                    vim.lsp.buf.format()
-                end, { desc = "Format current buffer with LSP" })
+                    vim.lsp.format()
+                end, {desc = "Format current buffer with LSP"})
             end
             local servers = {
                 lua_ls = {
@@ -129,6 +59,8 @@ local M = {
 
             require("mason").setup()
 
+            vim.diagnostic.config({virtual_text = false})
+
             local mason_lspconfig = require("mason-lspconfig")
 
             mason_lspconfig.setup {
@@ -144,7 +76,40 @@ local M = {
                     }
                 end,
             }
+        end
+    },
+    {
+        "hrsh7th/nvim-cmp",
+        event = "BufReadPre",
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp",
+        },
+        opts = function()
+            local cmp = require("cmp")
+            return {
+                completion = {
+                    keyword_length = 0,
+                    autocomplete = false
+                },
+                mapping = {
+                    ["<C-n>"] = function(fallback)
+                        if cmp.visible() then
+                            return cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert }(fallback)
+                        else
+                            return cmp.mapping.complete { reason = cmp.ContextReason.Auto }(fallback)
+                        end
+                    end,
+                    ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+                },
+                sources = {
+                    { name = "nvim_lsp" },
+                }
+            }
         end,
+        config = function(_,opts)
+            local cmp = require("cmp")
+            cmp.setup(opts)
+        end
     },
 }
 
