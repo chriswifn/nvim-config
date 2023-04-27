@@ -9,8 +9,6 @@ vim.opt.relativenumber = false
 
 vim.opt.ignorecase = true
 
--- vim.opt.clipboard = 'unnamedplus'
-
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
@@ -35,10 +33,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-
--- vim.opt.colorcolumn = "80"
-
-vim.g.mapleader = " "
 
 -- disable continuation of comments
 vim.api.nvim_create_autocmd("BufEnter",
