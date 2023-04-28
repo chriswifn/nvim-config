@@ -11,7 +11,7 @@ local M = {
         keywords = { bold = true },
         functions = { bold = true },
       },
-      on_highlights = function(hl, c)
+      on_highdarks = function(hl, c)
         local prompt = "#2d3149"
         hl.TelescopeNormal = {
           bg = c.bg_dark,
