@@ -41,6 +41,10 @@ local M = {
           fg = c.bg_dark,
         }
       end,
+      on_colors = function(colors)
+        colors.bg_statusline = "#101010"
+        colors.fg="#ffffff"
+      end
     }
 
   end,
