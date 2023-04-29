@@ -11,8 +11,10 @@ local M = {
         keywords = { bold = true },
         functions = { bold = true },
       },
+      on_colors = function(colors)
+        colors.bg_statusline = "#101010" 
+      end,
     }
-
   end,
   config = function(_, opts)
     vim.o.background = "dark"
