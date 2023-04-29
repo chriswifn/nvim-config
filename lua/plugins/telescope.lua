@@ -38,6 +38,13 @@ local M = {
           "node_modules",
           ".git",
         },
+        layout_strategy = "bottom_pane",
+        layout_config = {
+          height = 0.2,
+        },
+        border = false,
+        preview = false,
+        sorting_strategy = "ascending",
       },
       extensions = {
         fzf = {
