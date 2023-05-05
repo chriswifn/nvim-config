@@ -7,6 +7,12 @@ vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+vim.opt.laststatus=0
+vim.opt.ruler=true
+vim.opt.showmode=true
+vim.opt.ruf="%30(%=%#LineNr#%.50F [%{strlen(&ft)?&ft:'none'}] %l:%c %p%%%)"
+
+
 vim.opt.ignorecase = true
 
 vim.opt.tabstop = 2
