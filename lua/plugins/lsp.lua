@@ -83,13 +83,20 @@ local M = {
     event = "BufReadPre",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
     },
     opts = function()
       local cmp = require("cmp")
       return {
+        snippet = {
+          expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+          end
+        },
         completion = {
           keyword_length = 0,
-          autocomplete = false
+          autocomplete = false,
         },
         mapping = {
           ["<C-n>"] = function(fallback)
@@ -100,6 +107,10 @@ local M = {
             end
           end,
           ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+          ['<CR>'] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+          },
         },
         sources = {
           { name = "nvim_lsp" },
