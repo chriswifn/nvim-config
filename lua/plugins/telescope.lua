@@ -40,7 +40,7 @@ local M = {
         },
         layout_strategy = "bottom_pane",
         layout_config = {
-          height = 0.2,
+          height = 0.4,
         },
         border = false,
         preview = false,
