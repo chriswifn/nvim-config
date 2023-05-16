@@ -4,6 +4,10 @@
 vim.keymap.set("n", "<leader>bp", ":bprev<cr>")
 vim.keymap.set("n", "<leader>bn", ":bnext<cr>")
 
+-- commenting lines
+vim.keymap.set("n", "gcc", "!! comment ")
+vim.keymap.set("v", "gc", "! comment ")
+
 -- tmux_sessionizer
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux_sessionizer<cr>")
 
