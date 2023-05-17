@@ -8,6 +8,9 @@ vim.keymap.set("n", "<leader>bn", ":bnext<cr>")
 vim.keymap.set("n", "gcc", "!! comment ")
 vim.keymap.set("v", "gc", "! comment ")
 
+-- find character
+vim.keymap.set("n", ",,", ":keepp /<++><cr>ca<")
+
 -- tmux_sessionizer
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux_sessionizer<cr>")
 
