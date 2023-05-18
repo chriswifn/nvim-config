@@ -5,8 +5,10 @@ vim.keymap.set("n", "<leader>bp", ":bprev<cr>")
 vim.keymap.set("n", "<leader>bn", ":bnext<cr>")
 
 -- commenting lines
-vim.keymap.set("n", "gcc", "!! comment ")
-vim.keymap.set("v", "gc", "! comment ")
+vim.keymap.set("n", "gcc", "!! filter comment comment<cr>")
+vim.keymap.set("v", "gcc", "! filter comment comment<cr>")
+vim.keymap.set("n", "gcu", "!! filter comment uncomment<cr>")
+vim.keymap.set("v", "gcu", "! filter comment uncomment<cr>")
 
 -- find character
 vim.keymap.set("n", ",,", ":keepp /<++><cr>ca<")
