@@ -19,6 +19,6 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*" },
+  pattern = { "*.go" },
   command = "lua vim.lsp.buf.format()"
 })
