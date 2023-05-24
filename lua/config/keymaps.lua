@@ -4,6 +4,10 @@
 vim.keymap.set("n", "<leader>bp", ":bprev<cr>")
 vim.keymap.set("n", "<leader>bn", ":bnext<cr>")
 
+-- some function keys
+vim.keymap.set("n", "<F2>", "<cmd>let &bg=(&bg=='light'?'dark':'light')<cr>")
+vim.keymap.set("n", "<F1>", "<cmd>set number!<cr> :set relativenumber!<cr>")
+
 -- commenting lines
 vim.keymap.set("n", "gcc", "!! z filter comment comment<cr>")
 vim.keymap.set("v", "gcc", "! z filter comment comment<cr>")

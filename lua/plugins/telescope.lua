@@ -50,7 +50,7 @@ local M = {
           height = 0.4,
         },
         border = true,
-        borderchars = { '-', '|', '-', '|', '+', '+', '+', '+' },
+        borderchars = { '─', '│', '─', '│', '┌', '┐', '┘','└' },
         preview = false,
         sorting_strategy = "ascending",
       },
