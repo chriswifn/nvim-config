@@ -13,7 +13,6 @@ vim.opt.ruler=true
 vim.opt.showmode=true
 vim.opt.ruf="%30(%=%#LineNr#%.50F [%{strlen(&ft)?&ft:'none'}] %l:%c %p%%%)"
 
-
 vim.opt.ignorecase = true
 
 vim.opt.tabstop = 2
@@ -24,6 +23,7 @@ vim.opt.list = true
 
 vim.opt.smartindent = true
 
+vim.opt.textwidth = 72
 vim.opt.wrap = false
 
 vim.opt.swapfile = false
