@@ -22,3 +22,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*.go" },
   command = "lua vim.lsp.buf.format()"
 })
+
+vim.api.nvim_create_autocmd("CompleteDone", {
+  pattern = { "*" },
+  command = "pclose"
+})

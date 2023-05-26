@@ -55,7 +55,6 @@ local M = {
         },
       }
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
       require("mason").setup()
 
@@ -76,50 +75,6 @@ local M = {
           }
         end,
       }
-    end
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    event = "BufReadPre",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
-    },
-    opts = function()
-      local cmp = require("cmp")
-      return {
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end
-        },
-        completion = {
-          keyword_length = 0,
-          autocomplete = false,
-        },
-        mapping = {
-          ["<C-n>"] = function(fallback)
-            if cmp.visible() then
-              return cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert } (fallback)
-            else
-              return cmp.mapping.complete { reason = cmp.ContextReason.Auto } (fallback)
-            end
-          end,
-          ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
-          ['<CR>'] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-          },
-        },
-        sources = {
-          { name = "nvim_lsp" },
-        }
-      }
-    end,
-    config = function(_, opts)
-      local cmp = require("cmp")
-      cmp.setup(opts)
     end
   },
 }
