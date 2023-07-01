@@ -44,6 +44,7 @@ local specs = lush.extends({ base_specs }).with(function()
     Statement { base_specs.Statement, fg = palette.rose },
     Special { fg = palette.water },
     Type { fg = palette.sky, gui = "italic" },
+    String { base_specs.Constant, fg = palette.leaf },
   }
 end)
 
