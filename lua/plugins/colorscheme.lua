@@ -14,17 +14,31 @@
 
 -- return M
 
+-- local M = {
+--   "ellisonleao/gruvbox.nvim",
+--   lazy = false,
+--   priority = 1000,
+--   opts = {
+--     transparent_mode = true,
+--   },
+--   config = function(_, opts)
+--     require("gruvbox").setup(opts)
+--     vim.cmd("colorscheme gruvbox")
+--   end,
+-- }
+
+-- return M
+
 local M = {
-  "ellisonleao/gruvbox.nvim",
+  "mcchrish/zenbones.nvim",
+  dependencies = {
+    "rktjmp/lush.nvim"
+  },
   lazy = false,
   priority = 1000,
-  opts = {
-    transparent_mode = true,
-  },
-  config = function(_, opts)
-    require("gruvbox").setup(opts)
-    vim.cmd("colorscheme gruvbox")
-  end,
+  config = function()
+    vim.cmd("colorscheme gruvbones")
+  end
 }
 
 return M
