@@ -27,3 +27,10 @@ vim.api.nvim_create_autocmd("CompleteDone", {
   pattern = { "*" },
   command = "pclose"
 })
+
+-- Populate loclist with the current buffer diagnostics
+vim.api.nvim_create_autocmd('DiagnosticChanged', {
+  callback = function(args)
+    vim.diagnostic.setloclist({open = false})
+  end,
+})
