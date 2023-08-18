@@ -15,6 +15,12 @@ local M = {
         capabilities = capabilities,
       })
     end
+
+    if vim.fn.executable('racket') == 1 then
+      nvim_lsp.racket_langserver.setup({
+        capabilities = capabilities,
+      })
+    end
   end
 }
 
