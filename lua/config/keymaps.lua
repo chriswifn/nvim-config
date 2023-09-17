@@ -45,7 +45,7 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "gO", "<cmd>!xdg-open <cfile><CR>", { silent = true })
 vim.keymap.set("n", "<leader>ii", "<cmd>:pu=strftime('%Y%m%dT%H%M%S')<CR>", { silent = true })
 
-vim.keymap.set("n", "<Leader>q", function()
+vim.keymap.set("n", "<leader>q", function()
   vim.diagnostic.setloclist({ open = false }) -- don't open and focus
   local window = vim.api.nvim_get_current_win()
   vim.cmd.lwindow() -- open+focus loclist if has entries, else close -- this is the magic toggle command
