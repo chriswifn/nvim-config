@@ -29,8 +29,14 @@ vim.api.nvim_create_autocmd("CompleteDone", {
 })
 
 -- Populate loclist with the current buffer diagnostics
-vim.api.nvim_create_autocmd('DiagnosticChanged', {
+vim.api.nvim_create_autocmd("DiagnosticChanged", {
   callback = function(args)
     vim.diagnostic.setloclist({open = false})
   end,
+})
+
+-- automatically convert `index.md` to reveal.js html
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = { "index.md" },
+  command = "! cslide %",
 })
