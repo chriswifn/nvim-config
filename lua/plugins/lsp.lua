@@ -93,6 +93,12 @@ local M = {
         capabilities = capabilities,
       })
     end
+
+    if vim.fn.executable('scala') == 1 then
+      nvim_lsp.metals.setup({
+        capabilities = capabilities,
+      })
+    end
   end
 }
 
