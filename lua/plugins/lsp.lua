@@ -99,6 +99,13 @@ local M = {
         capabilities = capabilities,
       })
     end
+
+    if vim.fn.executable('java-language-server') == 1 then
+      nvim_lsp.java_language_server.setup({
+        cmd = {'java-language-server'},
+        capabilities = capabilities,
+      })
+    end
   end
 }
 
