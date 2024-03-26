@@ -27,48 +27,6 @@ local M = {
       "[/] Fuzzily search in current buffer"
     },
   },
-  opts = function()
-    local actions = require("telescope.actions")
-    local theme = require("telescope.themes")
-    return {
-      pickers = {
-        find_files = { hidden = true },
-        live_grep = {
-          additional_args = function()
-            return { "--hidden" }
-          end,
-        },
-      },
-      defaults = {
-        mappings = { i = { ["<esc>"] = actions.close } },
-        file_ignore_patterns = {
-          "node_modules",
-          ".git",
-        },
-        layout_strategy = "bottom_pane",
-        layout_config = {
-          height = 0.4,
-        },
-        border = true,
-        borderchars = { '─', '│', '─', '│', '┌', '┐', '┘','└' },
-        preview = false,
-        sorting_strategy = "ascending",
-      },
-      extensions = {
-        fzf = {
-          fuzzy = true,
-          override_generic_sorter = true,
-          override_file_sorter = true,
-          case_mode = "smart_case",
-        },
-        ["ui-select"] = {
-          theme.get_dropdown({
-            -- even more opts
-          }),
-        },
-      },
-    }
-  end,
   config = function(_, opts)
     local telescope = require("telescope")
     telescope.setup(opts)
