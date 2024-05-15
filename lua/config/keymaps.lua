@@ -9,10 +9,10 @@ vim.keymap.set("n", "<F2>", "<cmd>let &bg=(&bg=='light'?'dark':'light')<cr>")
 vim.keymap.set("n", "<F1>", "<cmd>set number!<cr> :set relativenumber!<cr>")
 
 -- commenting lines
-vim.keymap.set("n", "gcc", "!! z filter comment comment<cr>")
-vim.keymap.set("v", "gcc", "! z filter comment comment<cr>")
-vim.keymap.set("n", "gcu", "!! z filter comment uncomment<cr>")
-vim.keymap.set("v", "gcu", "! z filter comment uncomment<cr>")
+-- vim.keymap.set("n", "gcc", "!! z filter comment comment<cr>")
+-- vim.keymap.set("v", "gcc", "! z filter comment comment<cr>")
+-- vim.keymap.set("n", "gcu", "!! z filter comment uncomment<cr>")
+-- vim.keymap.set("v", "gcu", "! z filter comment uncomment<cr>")
 
 -- find character
 vim.keymap.set("n", ",,", ":keepp /<++><cr>ca<")
