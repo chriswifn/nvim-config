@@ -18,7 +18,7 @@ vim.keymap.set("n", "<F1>", "<cmd>set number!<cr> :set relativenumber!<cr>")
 vim.keymap.set("n", ",,", ":keepp /<++><cr>ca<")
 
 -- tmux_sessionizer
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux_sessionizer<cr>")
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmuxsessions<cr>")
 
 -- copy and paste (system clipboard)
 vim.keymap.set("n", "<leader>p", [["+p]])
