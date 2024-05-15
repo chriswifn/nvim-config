@@ -1,6 +1,6 @@
 local M = {
   "stevearc/oil.nvim",
-  event = "BufReadPre",
+  lazy = false,
   config = function()
     require("oil").setup {
       keymaps = {
