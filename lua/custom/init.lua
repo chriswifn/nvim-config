@@ -1,4 +1,5 @@
+require("custom.colors")
 require("custom.telescope")
-require("custom.colorscheme")
-require("custom.treesitter")
 require("custom.lsp")
+require("custom.treesitter")
+require("custom.completion")
